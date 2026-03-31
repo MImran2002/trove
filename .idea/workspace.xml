@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7b3e1ffa-b4a2-47fb-94d1-6de87592c0f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/objects/[id].tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/objects/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/objects/new.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/recordings/new.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ObjectForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RecordingForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/schema.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/seed.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/ObjectType.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/PhysicalObject.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Recording.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/User.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repositories/objectRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repositories/objectTypeRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repositories/recordingRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repositories/userRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/nfcService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/explore.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/explore.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/external-link.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/haptic-tab.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/hello-wave.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/parallax-scroll-view.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/themed-text.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/themed-view.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/collapsible.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/icon-symbol.ios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/icon-symbol.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/theme.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3BhD1sdQLvGkQJzeIfKbHpTpRzo" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;templates.modelproviders.configurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b3e1ffa-b4a2-47fb-94d1-6de87592c0f3" name="Changes" comment="" />
+      <created>1774932197452</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1774932197452</updated>
+    </task>
+    <servers />
+  </component>
+</project>

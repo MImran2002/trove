@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { Button, FlatList, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { findObjectById } from '../../src/repositories/objectRepository';
 import { getRecordingsByObject } from '../../src/repositories/recordingRepository';
+import { NFCScanner } from '@/src/services/nfcService';
 
 type PhysicalObjectItem = {
   id: string;
@@ -28,8 +29,10 @@ export default function ObjectDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const [object, setObject] = useState<PhysicalObjectItem | null>(null);
   const [recordings, setRecordings] = useState<RecordingItem[]>([]);
+  const [status, setStatus] = useState('No NFC action yet');
+  const [isScanning, setIsScanning] = useState(false);
 
-  useEffect(() => {
+  const loadObjectData = () => {
     if (!id) return;
 
     const foundObject = findObjectById(id) as PhysicalObjectItem | null;
@@ -37,7 +40,30 @@ export default function ObjectDetailScreen() {
 
     setObject(foundObject);
     setRecordings(foundRecordings);
+  };
+
+  useEffect(() => {
+    loadObjectData();
   }, [id]);
+
+  const handleBindNfc = async () => {
+    if (!id) return;
+
+    try {
+      setIsScanning(true);
+      setStatus('Waiting for NFC tag...');
+
+      const scanner = new NFCScanner();
+      const tag = await scanner.bind(id);
+
+      setStatus(`Bound NFC tag: ${tag}`);
+      loadObjectData();
+    } catch (error) {
+      setStatus(`Error: ${String(error)}`);
+    } finally {
+      setIsScanning(false);
+    }
+  };
 
   if (!object) {
     return (
@@ -73,6 +99,16 @@ export default function ObjectDetailScreen() {
           <Text style={styles.value}>
             {object.imageUri ? object.imageUri : 'No image yet'}
           </Text>
+
+          <View style={styles.buttonWrap}>
+            <Button
+              title={isScanning ? 'Scanning...' : 'Scan NFC Tag'}
+              onPress={handleBindNfc}
+              disabled={isScanning}
+            />
+          </View>
+
+          <Text style={styles.status}>{status}</Text>
         </View>
 
         <Text style={styles.sectionTitle}>🎙️ Recordings</Text>
@@ -128,6 +164,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#111',
     marginTop: 2,
+  },
+  buttonWrap: {
+    marginTop: 18,
+  },
+  status: {
+    marginTop: 12,
+    fontSize: 14,
+    color: '#333',
   },
   sectionTitle: {
     fontSize: 20,

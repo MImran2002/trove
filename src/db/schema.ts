@@ -15,6 +15,7 @@ export function initDatabase() {
       description TEXT NOT NULL
     );
 
+
     CREATE TABLE IF NOT EXISTS physical_objects (
       id TEXT PRIMARY KEY NOT NULL,
       name TEXT NOT NULL,

@@ -49,11 +49,10 @@ export class PhysicalObject {
   }
 
   attachNfcTag(tag: string): void {
-    this.nfcTag = tag;
-    updateObjectNfc(this.id, tag);
-  }
+    if (!tag || !tag.trim()) {
+      throw new Error('Invalid NFC tag');
+    }
 
-  attachNfcTag(tag: string): void {
     this.nfcTag = tag;
     updateObjectNfc(this.id, tag);
   }

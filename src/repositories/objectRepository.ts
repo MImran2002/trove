@@ -34,6 +34,13 @@ export function findObjectById(id: string) {
   );
 }
 
+export function findObjectByNfcTag(tag: string) {
+  return db.getFirstSync(
+    `SELECT * FROM physical_objects WHERE nfcTag = ?`,
+    [tag]
+  );
+}
+
 export function updateObjectNfc(id: string, tag: string) {
   db.runSync(
     `UPDATE physical_objects SET nfcTag = ? WHERE id = ?`,

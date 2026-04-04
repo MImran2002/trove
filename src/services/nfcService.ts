@@ -6,7 +6,10 @@ let nfcStarted = false;
 export class NFCScanner {
   async init(): Promise<boolean> {
     const supported = await NfcManager.isSupported();
-    if (!supported) return false;
+
+    if (!supported) {
+      return false;
+    }
 
     if (!nfcStarted) {
       await NfcManager.start();
@@ -27,7 +30,6 @@ export class NFCScanner {
       await NfcManager.requestTechnology(NfcTech.Ndef);
       const tag = await NfcManager.getTag();
 
-      // Prefer the hardware UID if available
       const tagId = tag?.id;
 
       if (!tagId) {
@@ -49,7 +51,7 @@ export class NFCScanner {
   }
 
   async bind(objectId: string): Promise<string> {
-    const obj = await findObjectById(objectId);
+    const obj = findObjectById(objectId);
 
     if (!obj) {
       throw new Error('Object not found');
@@ -61,7 +63,7 @@ export class NFCScanner {
       throw new Error('Invalid NFC tag');
     }
 
-    await updateObjectNfc(objectId, tag);
+    updateObjectNfc(objectId, tag);
     return tag;
   }
 }

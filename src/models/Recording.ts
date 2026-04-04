@@ -28,7 +28,7 @@ export class Recording {
   }
 
   record(): void {
-    console.log('Recording logic will be connected to expo-audio later');
+    console.log('Recording logic is handled by the screen using expo-audio');
   }
 
   playback(): void {

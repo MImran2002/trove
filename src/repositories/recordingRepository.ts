@@ -27,7 +27,19 @@ export function createRecording(recording: {
 
 export function getRecordingsByObject(objectId: string) {
   return db.getAllSync(
-    `SELECT * FROM recordings WHERE objectId = ?`,
+    `SELECT * FROM recordings
+     WHERE objectId = ?
+     ORDER BY recordedAt DESC`,
+    [objectId]
+  );
+}
+
+export function getLatestRecordingByObject(objectId: string) {
+  return db.getFirstSync(
+    `SELECT * FROM recordings
+     WHERE objectId = ?
+     ORDER BY recordedAt DESC
+     LIMIT 1`,
     [objectId]
   );
 }

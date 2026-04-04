@@ -1,23 +1,29 @@
 import { useState } from 'react';
-import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { PhysicalObject } from '../models/PhysicalObject';
 
 type Props = {
+  scannedTag?: string | null;
   onSaved?: () => void;
 };
 
-export default function ObjectForm({ onSaved }: Props) {
+export default function ObjectForm({ scannedTag, onSaved }: Props) {
   const [name, setName] = useState('');
   const [typeId, setTypeId] = useState('artifact');
   const [imageUri, setImageUri] = useState('');
 
   function handleSave() {
+    if (!name.trim()) {
+      Alert.alert('Missing name', 'Please enter an object name.');
+      return;
+    }
+
     try {
       const newObject = new PhysicalObject(
         `obj_${Date.now()}`,
         name.trim(),
         new Date().toISOString(),
-        null,
+        scannedTag ?? null,
         typeId.trim(),
         imageUri.trim() || null
       );
@@ -65,7 +71,14 @@ export default function ObjectForm({ onSaved }: Props) {
         onChangeText={setImageUri}
       />
 
-      <Button title="Save Object" onPress={handleSave} />
+      <Text style={styles.label}>Scanned NFC Tag</Text>
+      <Text style={styles.tagValue}>
+        {scannedTag ? scannedTag : 'No NFC tag scanned'}
+      </Text>
+
+      <Pressable style={styles.saveButton} onPress={handleSave}>
+        <Text style={styles.saveButtonText}>Save Object</Text>
+      </Pressable>
     </View>
   );
 }
@@ -87,5 +100,22 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 10,
     backgroundColor: 'white',
+  },
+  tagValue: {
+    fontSize: 15,
+    color: '#444',
+    marginBottom: 8,
+  },
+  saveButton: {
+    marginTop: 12,
+    backgroundColor: '#111',
+    paddingVertical: 14,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  saveButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '700',
   },
 });

@@ -14,5 +14,11 @@ export default function RootLayout() {
     }
   }, []);
 
-  return <Stack screenOptions={{ headerTitleAlign: 'center' }} />;
+  return (
+    <Stack
+      screenOptions={{
+        headerShown: false,
+      }}
+    />
+  );
 }

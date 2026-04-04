@@ -13,3 +13,12 @@ export function findUser(username: string) {
     [username]
   );
 }
+
+export function getFirstUser() {
+  return db.getFirstSync(`SELECT * FROM users LIMIT 1`);
+}
+
+export function hasRegisteredUser() {
+  const user = db.getFirstSync(`SELECT username FROM users LIMIT 1`);
+  return !!user;
+}
